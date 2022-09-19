@@ -1,0 +1,108 @@
+
+
+  <div id="main" style="margin-left:-10%;margin-right:10%">
+
+    <div class="pagetitle">
+      <h1>Contact Us</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section contact">
+
+      <div class="row gy-4">
+
+        <div class="col-xl-6">
+
+          <div class="row">
+           <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-envelope"></i>
+                <h3>Email Us</h3>
+                <p>admin@lightspeedcouriers.com</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+                <p>+919876543210</p>
+              </div>
+            </div>
+             <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <p>RVR & JC College,<br>Chowdavaram,<br>522006</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-box card">
+                <i class="bi bi-clock"></i>
+                <h3>Open Hours</h3>
+                <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-xl-6">
+          <div class="card p-4">
+          <div id="contact" data-ng-controller="ContactController">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" id="name" data-ng-model="data.object.name" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="text" class="form-control" id="email" data-ng-model="data.object.email" placeholder="Your Email" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" id="subject" data-ng-model="data.object.subject" placeholder="Subject" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" id="message" data-ng-model="data.object.message" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                 <div class="col-md-12 text-center">
+                  <button class="form-control btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal" data-ng-click="sendReview(data.object)">Send Message</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
+        </div> 
+
+      </div>
+       
+              <div class="modal fade" id="basicModal" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content"> 
+                    <div class="modal-header">   
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                     Review Sent Successfully<i class="bx bxs-been-here"></i>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </section>
+
+  </div><!-- End #main -->
+  	<script type="text/javascript" src="/courier/js/ContactModule.js"></script>
+  <script>
+		jQuery(document).ready(function() {
+			angular.bootstrap(jQuery("#contact"), [ 'ContactModule' ]);
+		});
+	</script>
+
+  
+
+ 

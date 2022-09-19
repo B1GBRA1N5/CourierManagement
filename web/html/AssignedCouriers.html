@@ -1,0 +1,48 @@
+	<div class="pagetitle">
+      <h1>Assigned Couriers</h1>
+    </div><!-- End Page Title -->
+<div id="assignedCouriers" data-ng-controller="AssignedCouriersController">
+    <section class="section">
+      <div class="row align-items-top">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Courier List</h5>
+              <table class="table datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Delivery Address</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <tr data-ng-repeat="acdata in acdatas">
+                    <th scope="row">{{acdata.cid}}</th>
+                    <td>{{acdata.receiver}}</td>
+                    <td>{{acdata.address}}</td>
+                    <td>{{acdata.phone}}</td>
+                    <td>{{acdata.status}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+</div>
+<script type="text/javascript" src="/courier/js/AssignedCouriersModule.js"></script>
+ <script>
+		jQuery(document).ready(function() {
+			angular.bootstrap(jQuery("#assignedCouriers"), [ 'AssignedCouriersModule' ]);
+		}); 
+	</script> 
+ 

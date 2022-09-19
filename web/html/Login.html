@@ -1,0 +1,67 @@
+
+<style>
+.top_layer
+{
+	position: fixed; /* Sit on top of the page content */
+  	width: 100%; /* Full width (cover the whole page) */
+  	 /* Full height (cover the whole page) */
+  	top: 0;
+  	left: 0;
+  	right: 0;    
+  	bottom: 0;
+  	background-color: rgba(32,188,249,0.3); 
+  	z-index: 50; 
+}    
+</style>     
+<div id="top" class="top_layer">
+
+	<!-- Login start -->   
+	<div id="login" data-ng-controller="LoginController" style="margin-left:30%"> 
+		<div class="login-3 tab-box">
+			<div class="particles-js" id="particles-js"></div>
+			<div class="container-fluid">    
+				<div class="row">
+					<div class="col-lg-7 col-md-12 col-pad-0 form-section">
+						<div class="login-inner-form">
+							<div class="details">
+								<h2 class="text-white mb-3">Login</h2>
+								<form>
+									<div class="form-group">
+										<input type="text" name="email" class="form-control input-text"
+											data-ng-model="data.object.email"
+						 					placeholder="Email">
+									</div>
+									<div class="form-group">
+										<input type="password" name="Password" class="form-control input-text"
+											data-ng-model="data.object.password" placeholder="Password">
+									</div>
+									<div class="checkbox clearfix"> 
+										<a class=" text-white">Forgot
+											Password ?</a> 
+									</div>
+									<div class="form-group">
+										<button type="submit" data-ng-click="login(data.object);"
+											class="btn-md btn-warning btn-theme btn-block">Login</button>
+									</div>
+									<div id="errorDiv"></div>
+								</form>
+							</div> 
+						</div>      
+					</div>
+				</div>            
+			</div>   
+		</div>
+	</div>
+	</div>
+	<!-- Login end -->
+
+	<script type="text/javascript" src="/courier/js/LoginModule.js"></script>
+ 	<script src="/courier/js/particles.min.js"></script>
+	<script src="/courier/js/particles-app.js"></script>
+	
+	<script>
+		jQuery(document).ready(function() {
+			angular.bootstrap(jQuery("#login"), [ 'LoginModule' ]);
+		});
+	</script>
+
