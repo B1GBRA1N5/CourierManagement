@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <typeAliases>
+    		<typeAlias alias="Login" type="com.courier.Model.Login" />
+    		<typeAlias alias="Review" type="com.courier.Model.Review" />
+    		<typeAlias alias="Courier" type="com.courier.Model.Courier" />
+    		<typeAlias alias="Employee" type="com.courier.Model.Employee" />
+    </typeAliases>
+    
+    <mappers>
+       		<mapper resource="com/example/security/model/Login-MyBatis.xml" />
+       		<mapper resource="com/example/security/model/Home-MyBatis.xml" />
+    </mappers>
+    
+</configuration>

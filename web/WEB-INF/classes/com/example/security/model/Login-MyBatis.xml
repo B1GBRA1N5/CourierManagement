@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Login">             
+   
+<select resultType="java.lang.Integer" parameterType="map" id="checkUser"> 
+	select count(*) from courier.users where email = #{p.email} AND password = #{p.password} 
+</select>
+
+ <select parameterType="map" id="getRole" resultType="java.lang.Integer">     
+	select roleid from courier.users where email = #{email} AND password = #{password}
+ </select>                    
+           
+<select resultType="Login" parameterType="map" id="getUserDetails"> 
+	select email,empid,password,id,CURRENT_TIMESTAMP as logtime from courier.users where email = #{email} AND password = #{password};
+</select>                      
+</mapper>

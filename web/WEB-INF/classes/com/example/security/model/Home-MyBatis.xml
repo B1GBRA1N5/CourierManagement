@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Home">             
+   
+	<insert id="sendReview" parameterType="map">
+		insert into courier.reviews  
+		(name,email,subject,message)
+		values(#{p.name},#{p.email},#{p.subject},#{p.message});
+	</insert>  
+	
+	 <select id="getReviews" resultType="Review">
+		 select email,name,subject,message from courier.reviews;
+	 </select> 
+	 
+	 
+	 <select id="search" resultType="Courier">
+		 select sender,receiver,status,cboy from courier.couriers where cid=#{cid};
+	 </select> 
+	 
+	 <select id="getCouriers" resultType="Courier">
+		 select cid,sender,receiver,status,cboy,address,phone from courier.couriers;
+	 </select>
+	 
+	 
+	 <select id="getManagers" resultType="Employee">
+		SELECT email, empid, name, phone, location as branch FROM courier.users where roleid=2;
+
+	 </select>
+	 
+	  <select id="getAssignedCouriers" resultType="Courier" parameterType="java.lang.String">
+		 select cid,sender,receiver,status,cboy,address,phone from courier.couriers where cboyid=#{cboy};
+	 </select> 
+	 
+
+</mapper>
