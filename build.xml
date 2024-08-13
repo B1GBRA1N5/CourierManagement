@@ -12,8 +12,8 @@
 		<copy todir="D:\apache-tomcat-7.0.85\webapps" flatten="true">
 			<resources>
 				<file file="warfile/courier.war" />
-			</resources> 
-		</copy>  
+			</resources>
+		</copy> 
 	</target>
 
 	<target name="clean" description="clean up">
